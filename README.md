@@ -8,7 +8,9 @@ RUN apt-get update && apt-get install -y python3-pip python3-dev && \
 
 ## Use Docker Buildkit
 
-` DOCKER_BUILDKIT=1 docker build -t myapp . `
+```
+DOCKER_BUILDKIT=1 docker build -t myapp . 
+```
 
 ## Always Run Containers as Non-Root Users
 
@@ -19,8 +21,12 @@ USER appuser
 
 ## Limit the network exposure of your container by restricting the ports and IP addresses
 
-` docker run -p 127.0.0.1:8080:8080 myimage `
+```
+docker run -p 127.0.0.1:8080:8080 myimage 
+```
 
 ## Regularly scan your Docker images for known vulnerabilities
 
-`docker scan your-image:tag`
+```
+docker scan your-image:tag
+```
