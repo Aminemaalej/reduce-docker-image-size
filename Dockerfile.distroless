@@ -1,0 +1,5 @@
+FROM gcr.io/distroless/python3-debian10
+COPY --from=builder /app/dist/main /app/main
+COPY --from=builder /app/model /app/model
+COPY --from=builder /app/config.yml /app/config.yml
+ENTRYPOINT ["/app/main"]

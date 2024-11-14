@@ -1,0 +1,9 @@
+# Stage 2: Production
+FROM scratch
+# Set the working directory
+WORKDIR /app
+# Copy only the necessary files from the build stage
+COPY --from=builder /app/dist/inference /app/inference
+COPY --from=builder /app/model /app/model
+# Run the inference executable
+ENTRYPOINT ["/app/inference"]
